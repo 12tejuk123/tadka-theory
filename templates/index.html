@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tadka Theory</title>
+
+  <link rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <header>
+
+    <div class="logo">
+      TADKA THEORY
+    </div>
+
+    <nav>
+      <a href="#">HOME</a>
+      <a href="#">ABOUT</a>
+      <a href="#">PRODUCTS</a>
+      <a href="#">CONTACT</a>
+    </nav>
+
+    <button class="nav-btn">
+      ORDER NOW
+    </button>
+
+  </header>
+
+
+  <!-- HERO SECTION -->
+
+  <section class="hero">
+
+    <div class="hero-left">
+
+      <h2>Taste the Theory</h2>
+
+      <h1>
+        BOLD FLAVOR.<br>
+        <span>REAL HEAT.</span>
+      </h1>
+
+      <p>
+        Homemade Schezwan Chutney crafted
+        with love, spice and the perfect tadka.
+      </p>
+
+      <div class="features">
+
+        <div>🔥 Bold & Spicy</div>
+        <div>🧄 Loaded With Garlic</div>
+        <div>🌿 No Artificial Preservatives</div>
+
+      </div>
+
+      <button onclick="scrollProducts()">
+        ORDER NOW
+      </button>
+
+    </div>
+
+
+    <div class="hero-right">
+
+      <img src="{{ url_for('static',
+      filename='images/hero-bg.jpg') }}">
+
+    </div>
+
+  </section>
+
+
+  <!-- PRODUCTS -->
+
+  <section class="products">
+
+    <div class="product-heading">
+
+      <h3>OUR PRODUCTS</h3>
+
+      <h1>
+        SPICE UP
+        <span>EVERYTHING</span>
+      </h1>
+
+    </div>
+
+
+    <div class="product-grid">
+
+      <!-- CARD -->
+
+      <div class="card">
+
+        <img src="{{ url_for('static',
+        filename='images/product2.jpg') }}">
+
+        <h2>Schezwan Chutney</h2>
+
+        <p>200g</p>
+
+        <h3>₹89</h3>
+
+        <button onclick="openOrder('Schezwan Chutney')">
+          ORDER NOW
+        </button>
+
+      </div>
+
+
+      <!-- CARD -->
+
+      <div class="card">
+
+        <img src="{{ url_for('static',
+        filename='images/product3.jpg') }}">
+
+        <h2>Garlic Schezwan Dip</h2>
+
+        <p>200g</p>
+
+        <h3>₹99</h3>
+
+        <button onclick="openOrder('Garlic Schezwan Dip')">
+          ORDER NOW
+        </button>
+
+      </div>
+
+
+      <!-- CARD -->
+
+      <div class="card">
+
+        <img src="{{ url_for('static',
+        filename='images/product4.jpg') }}">
+
+        <h2>Momos Chutney</h2>
+
+        <p>200g</p>
+
+        <h3>₹79</h3>
+
+        <button onclick="openOrder('Momos Chutney')">
+          ORDER NOW
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ORDER MODAL -->
+
+  <div class="modal" id="orderModal">
+
+    <div class="modal-content">
+
+      <span class="close"
+            onclick="closeOrder()">
+        &times;
+      </span>
+
+      <h1>PLACE ORDER</h1>
+
+      <form id="orderForm">
+
+        <input type="text"
+               id="name"
+               placeholder="Your Name"
+               required>
+
+        <input type="tel"
+               id="phone"
+               placeholder="Phone Number"
+               required>
+
+        <textarea id="address"
+                  placeholder="Address"></textarea>
+
+        <input type="text"
+               id="product"
+               readonly>
+
+        <select id="quantity">
+
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+
+        </select>
+
+        <button type="submit">
+          PLACE ORDER
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- WHATSAPP BUTTON -->
+
+  <a class="whatsapp"
+     href="https://wa.me/919999999999"
+     target="_blank">
+
+    WhatsApp
+
+  </a>
+
+
+  <script src="{{ url_for('static',
+  filename='script.js') }}"></script>
+
+</body>
+</html>
